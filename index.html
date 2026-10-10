@@ -265,7 +265,8 @@
       z-index: 100;
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
+      padding: 16px;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
@@ -280,11 +281,10 @@
       width: 100%;
       max-width: 450px;
       background: var(--card-bg);
-      border-radius: 28px 28px 0 0;
+      border-radius: 28px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: none;
-      height: 94vh;
-      height: 94dvh;
+      height: 88vh;
+      height: 88dvh;
       max-height: 880px;
       display: flex;
       flex-direction: column;
@@ -301,14 +301,7 @@
 
     @media (min-width: 600px) {
       .profile-overlay {
-        align-items: center;
         padding: 24px;
-      }
-      .profile-sheet {
-        border-radius: 28px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        height: 88vh;
-        height: 88dvh;
       }
     }
 
@@ -742,6 +735,12 @@
       flex-shrink: 0;
     }
 
+    .connection-icon-img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
     .connection-title {
       font-size: 0.92rem;
       font-weight: 600;
@@ -937,8 +936,8 @@
 <body>
 
   <!-- ==========================================================
-       PANTALLA 1: PÍLDORA FLOTANTE
-       ========================================================== -->
+        PANTALLA 1: PÍLDORA FLOTANTE
+        ========================================================== -->
   <div class="pill-wrapper" id="openProfileTrigger" title="Haz clic para ver el perfil de Arm">
     <div class="floating-pill">
       <div class="pill-crow-overlay"></div>
@@ -971,14 +970,14 @@
 
 
   <!-- ==========================================================
-       PANTALLA 2 Y 3: MODAL PERFIL EXPANDIDO
-       ========================================================== -->
+        PANTALLA 2 Y 3: MODAL PERFIL EXPANDIDO
+        ========================================================== -->
   <div class="profile-overlay" id="profileModalOverlay">
     <div class="profile-sheet">
 
       <!-- ==========================================================
-           ZONA FIJA: PORTADA IMAGEN + AVATAR + ESTADO FLOTANTE
-           ========================================================== -->
+            ZONA FIJA: PORTADA IMAGEN + AVATAR + ESTADO FLOTANTE
+            ========================================================== -->
       <div class="profile-fixed-header">
         
         <div class="profile-banner">
@@ -1005,8 +1004,8 @@
       </div>
 
       <!-- ==========================================================
-           ZONA SCROLLEABLE: A partir del Nombre
-           ========================================================== -->
+            ZONA SCROLLEABLE: A partir del Nombre
+            ========================================================== -->
       <div class="sheet-scroll-body">
 
         <!-- Nombre e insignias -->
@@ -1086,9 +1085,7 @@
             <div class="connection-item">
               <div class="connection-left">
                 <div class="connection-icon-box" style="background: #121212;">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
-                    <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12zm4.441 16.892c-2.102 0-3.315-1.19-3.315-1.19s-.019 1.132-.019 1.132h-2.186V7.168h2.205v4.542s1.171-.983 2.915-.983c2.477 0 3.79 1.83 3.79 4.318 0 2.488-1.503 4.847-3.39 4.847z"/>
-                  </svg>
+                  <img src="https://cdn2.unrealengine.com/epic-games-logo-1000x1000-240188015.png" alt="Epic Games" class="connection-icon-img">
                 </div>
                 <div class="connection-title">
                   <span>Vindictor</span>
@@ -1101,9 +1098,7 @@
             <div class="connection-item">
               <div class="connection-left">
                 <div class="connection-icon-box" style="background: #003087;">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
-                    <path d="M8.031 18.069c.813.262 1.836.431 2.868.431 3.518 0 5.097-1.463 5.097-3.082 0-1.896-1.581-2.485-3.628-2.883-2.102-.407-2.617-.813-2.617-1.503 0-.691.564-1.206 1.884-1.206 1.127 0 2.213.242 2.92.571l.635-2.008c-.859-.39-2.072-.647-3.486-.647-3.376 0-4.908 1.547-4.908 3.097 0 1.954 1.636 2.502 3.655 2.883 2.04.378 2.589.852 2.589 1.547 0 .802-.733 1.258-2.043 1.258-1.383 0-2.637-.363-3.559-.769l-.407 2.311z"/>
-                  </svg>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/PlayStation_single_color_logo.svg" alt="PlayStation" class="connection-icon-img">
                 </div>
                 <div class="connection-title">
                   <span>FeidD13</span>
@@ -1116,7 +1111,7 @@
             <div class="connection-item">
               <div class="connection-left">
                 <div class="connection-icon-box" style="background: rgba(29, 185, 84, 0.15);">
-                  <i data-lucide="music" style="width: 18px; height: 18px; color: var(--spotify-green);"></i>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" class="connection-icon-img">
                 </div>
                 <div class="connection-title">
                   <span>A</span>
@@ -1130,9 +1125,7 @@
             <div class="connection-item">
               <div class="connection-left">
                 <div class="connection-icon-box" style="background: rgba(145, 70, 255, 0.2);">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#9146FF">
-                    <path d="M11.571 4.714h1.715v5.143h-1.715V4.714zm4.715 0H18v5.143h-1.714V4.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714v9.429z"/>
-                  </svg>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Twitch_Glitch_Logo_Purple.svg" alt="Twitch" class="connection-icon-img">
                 </div>
                 <div class="connection-title">
                   <span>vindictvor</span>
@@ -1216,7 +1209,7 @@
             <div class="board-item">
               <img src="https://xatimg.com/image/VDYc1YWFVHCw.jpg" class="board-img" alt="Gothic Crown">
               <div class="board-title-overlay"><span class="board-title">Casco de Loki</span></div>
-         
+          
             </div> 
             <div class="board-item">
               <img src="https://xatimg.com/image/pLYyB9GRBueR.jpg" class="board-img" alt="Gothic Crown">
