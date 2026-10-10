@@ -412,7 +412,7 @@
     .sheet-scroll-body {
       flex: 1;
       overflow-y: auto;
-      padding: 16px clamp(16px, 3.5vw, 22px) 24px;
+      padding: 16px clamp(16px, 3.5vw, 22px) 90px;
       scrollbar-width: thin;
       scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
     }
@@ -693,6 +693,76 @@
       margin-bottom: 16px;
     }
 
+    /* SECCIÓN MIEMBRO DESDE */
+    .member-since-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #cfd3dc;
+      font-size: 0.92rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .member-since-box svg {
+      color: var(--text-muted);
+    }
+
+    /* SECCIÓN CONEXIONES */
+    .connections-card-box {
+      background: var(--card-subtle);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .connection-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .connection-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .connection-icon-box {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .connection-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .verified-check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 15px;
+      height: 15px;
+      background: #3b82f6;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 10px;
+    }
+
     /* SECCIÓN AMIGOS */
     .friends-card-box {
       background: var(--card-subtle);
@@ -701,7 +771,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
+      margin-bottom: 18px;
       border: 1px solid rgba(255, 255, 255, 0.05);
       transition: background 0.2s, border-color 0.2s;
     }
@@ -782,6 +852,65 @@
       transform: translateX(2px);
     }
 
+    /* BARRA NAVEGACIÓN FLOTANTE INFERIOR DE 4 ÍCONOS */
+    .bottom-nav-container {
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      z-index: 30;
+      pointer-events: none;
+    }
+
+    .custom-nav-bar {
+      pointer-events: auto;
+      background: rgba(30, 22, 26, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 8px 16px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav-bar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: #f3f4f6;
+      cursor: pointer;
+      padding: 6px 4px;
+      border-radius: 14px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-bar-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .nav-bar-item i {
+      width: 20px;
+      height: 20px;
+      stroke-width: 2.2;
+    }
+
+    .nav-bar-item span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
     .toast-popup {
       position: fixed;
       top: 24px;
@@ -815,7 +944,7 @@
       <div class="pill-crow-overlay"></div>
 
       <div class="pill-avatar-box">
-        <img src="https://xatimg.com/image/6o4EzgRJHaHm.jpg" alt="Avatar" class="pill-avatar-img">
+        <img src="https://xatimg.com/image/S2qKZsqtJVUr.jpg" alt="Avatar" class="pill-avatar-img">
         <div>
           <div></div>
         </div>
@@ -900,11 +1029,11 @@
         <div class="sheet-nav-tabs">
           <button class="nav-tab-item active" data-tab="tab-principal">Principal</button>
           <button class="nav-tab-item" data-tab="tab-tablero">Reliquias</button>
-         
         </div>
 
         <!-- CONTENIDO PESTAÑA PRINCIPAL -->
         <div class="tab-content active" id="tab-principal">
+
           <!-- Widget Spotify -->
           <div class="spotify-box">
             <div class="spotify-top-label">
@@ -942,6 +1071,77 @@
             𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 𝑚𝑦 𝑠𝑜𝑢𝑙 𝑠𝑜𝑐𝑖𝑒𝑡𝑦.
           </div>
 
+          <!-- Miembro desde -->
+          <div class="field-caption">Miembro desde</div>
+          <div class="member-since-box">
+            <i data-lucide="disc" style="width: 18px; height: 18px;"></i>
+            <span>9 ene 2017</span>
+          </div>
+
+          <!-- Conexiones -->
+          <div class="field-caption">Conexiones</div>
+          <div class="connections-card-box">
+            <!-- 1. Epic Games -->
+            <div class="connection-item">
+              <div class="connection-left">
+                <div class="connection-icon-box" style="background: #121212;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+                    <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12zm4.441 16.892c-2.102 0-3.315-1.19-3.315-1.19s-.019 1.132-.019 1.132h-2.186V7.168h2.205v4.542s1.171-.983 2.915-.983c2.477 0 3.79 1.83 3.79 4.318 0 2.488-1.503 4.847-3.39 4.847z"/>
+                  </svg>
+                </div>
+                <div class="connection-title">
+                  <span>Vindictor</span>
+                  <span class="verified-check">✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. PlayStation Network -->
+            <div class="connection-item">
+              <div class="connection-left">
+                <div class="connection-icon-box" style="background: #003087;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff">
+                    <path d="M8.031 18.069c.813.262 1.836.431 2.868.431 3.518 0 5.097-1.463 5.097-3.082 0-1.896-1.581-2.485-3.628-2.883-2.102-.407-2.617-.813-2.617-1.503 0-.691.564-1.206 1.884-1.206 1.127 0 2.213.242 2.92.571l.635-2.008c-.859-.39-2.072-.647-3.486-.647-3.376 0-4.908 1.547-4.908 3.097 0 1.954 1.636 2.502 3.655 2.883 2.04.378 2.589.852 2.589 1.547 0 .802-.733 1.258-2.043 1.258-1.383 0-2.637-.363-3.559-.769l-.407 2.311z"/>
+                  </svg>
+                </div>
+                <div class="connection-title">
+                  <span>FeidD13</span>
+                  <span class="verified-check">✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Spotify -->
+            <div class="connection-item">
+              <div class="connection-left">
+                <div class="connection-icon-box" style="background: rgba(29, 185, 84, 0.15);">
+                  <i data-lucide="music" style="width: 18px; height: 18px; color: var(--spotify-green);"></i>
+                </div>
+                <div class="connection-title">
+                  <span>A</span>
+                  <span class="verified-check">✓</span>
+                </div>
+              </div>
+              <i data-lucide="external-link" style="width: 16px; height: 16px; color: var(--text-muted);"></i>
+            </div>
+
+            <!-- 4. Twitch -->
+            <div class="connection-item">
+              <div class="connection-left">
+                <div class="connection-icon-box" style="background: rgba(145, 70, 255, 0.2);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#9146FF">
+                    <path d="M11.571 4.714h1.715v5.143h-1.715V4.714zm4.715 0H18v5.143h-1.714V4.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714v9.429z"/>
+                  </svg>
+                </div>
+                <div class="connection-title">
+                  <span>vindictvor</span>
+                  <span class="verified-check">✓</span>
+                </div>
+              </div>
+              <i data-lucide="external-link" style="width: 16px; height: 16px; color: var(--text-muted);"></i>
+            </div>
+          </div>
+
           <!-- Sección Amigos -->
           <div class="field-caption">Amigos</div>
           <div class="friends-card-box">
@@ -969,6 +1169,7 @@
               <i data-lucide="chevron-right" style="width: 17px; height: 17px;"></i>
             </div>
           </div>
+
         </div>
 
         <!-- CONTENIDO PESTAÑA TABLERO -->
@@ -976,44 +1177,44 @@
           <div class="field-caption">Tablero Visual</div>
           <div class="board-grid">
             <div class="board-item">
-              <img src="https://xatimg.com/image/1Hd9MJOfPtmq.jpg" class="board-img" alt="Dark Vibe">
-              <div class="board-title-overlay"><span class="board-title">Reactor arc</span></div>
-            </div>
-            <div class="board-item">
-              <img src="https://xatimg.com/image/1bzu5hoK8A8t.jpg" class="board-img" alt="Gaming Setup">
-              <div class="board-title-overlay"><span class="board-title">Cuernos de Loki</span></div>
-            </div>
-            <div class="board-item">
-              <img src="https://xatimg.com/image/E7mb0yCQjD68.jpg" class="board-img" alt="Neon City">
-              <div class="board-title-overlay"><span class="board-title">Cabeza superior ironman</span></div>
-            </div>
-            <div class="board-item">
-              <img src="https://xatimg.com/image/q92mEAvIAIYE.jpg" class="board-img" alt="Dark Art">
-              <div class="board-title-overlay"><span class="board-title">Guantelete del infinito</span></div>
-            </div>
-            <div class="board-item">
-              <img src="https://xatimg.com/image/yQSTmQ4ZT6Ei.jpg" class="board-img" alt="Music Vibes">
-              <div class="board-title-overlay"><span class="board-title">Los 10 anillos</span></div>
-            </div>
-            <div class="board-item">
-              <img src="https://xatimg.com/image/KLlfG3mqdG2E.jpg" class="board-img" alt="Abstract Dark">
-              <div class="board-title-overlay"><span class="board-title">Martillo de thor</span></div>
-            </div>
-            <div class="board-item">
-              <img src="https://xatimg.com/image/SWUivJlOvD3h.jpg" class="board-img" alt="Forest Mist">
-              <div class="board-title-overlay"><span class="board-title">El darkhold</span></div>
-            </div>
-            <div class="board-item">
-              <img src="https://xatimg.com/image/Q4oViSSc0Ncb.jpg" class="board-img" alt="Space Void">
+              <img src="https://xatimg.com/image/OKZ6bhUNgc7S.jpg" class="board-img" alt="Dark Vibe">
               <div class="board-title-overlay"><span class="board-title">Mascara latveriana</span></div>
             </div>
             <div class="board-item">
-              <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=400&q=80" class="board-img" alt="Neon Lines">
-              <div class="board-title-overlay"><span class="board-title">Narcxssist</span></div>
+              <img src="https://xatimg.com/image/BPqmsFWn0lAr.jpg" class="board-img" alt="Gaming Setup">
+              <div class="board-title-overlay"><span class="board-title">Mr fantastico</span></div>
             </div>
             <div class="board-item">
-              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" class="board-img" alt="Gothic Crown">
-              <div class="board-title-overlay"><span class="board-title">Crown Rock</span></div>
+              <img src="https://xatimg.com/image/ZbgRYcwuQbLj.jpg" class="board-img" alt="Neon City">
+              <div class="board-title-overlay"><span class="board-title">Cabeza de Ultron</span></div>
+            </div>
+            <div class="board-item">
+              <img src="https://xatimg.com/image/n2TVQXJ6wnTi.jpg" class="board-img" alt="Dark Art">
+              <div class="board-title-overlay"><span class="board-title">Reactor arc</span></div>
+            </div>
+            <div class="board-item">
+              <img src="https://xatimg.com/image/3VDX2S1O8TLx.jpg" class="board-img" alt="Music Vibes">
+              <div class="board-title-overlay"><span class="board-title">Tempad AVT</span></div>
+            </div>
+            <div class="board-item">
+              <img src="https://xatimg.com/image/NSU4F6KeAo7s.jpg" class="board-img" alt="Abstract Dark">
+              <div class="board-title-overlay"><span class="board-title">10 anillos</span></div>
+            </div>
+            <div class="board-item">
+              <img src="https://xatimg.com/image/vMfJd13ua3NH.jpg" class="board-img" alt="Forest Mist">
+              <div class="board-title-overlay"><span class="board-title">Guantelete del infinito</span></div>
+            </div>
+            <div class="board-item">
+              <img src="https://xatimg.com/image/0K78bFZbqc09.jpg" class="board-img" alt="Space Void">
+              <div class="board-title-overlay"><span class="board-title">Casco de magneto</span></div>
+            </div>
+            <div class="board-item">
+              <img src="https://xatimg.com/image/pnYzqLqwfSmQ.jpg" class="board-img" alt="Neon Lines">
+              <div class="board-title-overlay"><span class="board-title">Martillo de Thor</span></div>
+            </div>
+            <div class="board-item">
+              <img src="https://xatimg.com/image/VDYc1YWFVHCw.jpg" class="board-img" alt="Gothic Crown">
+              <div class="board-title-overlay"><span class="board-title">Casco de Loki</span></div>
             </div>
           </div>
         </div>
@@ -1027,6 +1228,28 @@
         </div>
 
       </div> <!-- Fin .sheet-scroll-body -->
+
+      <!-- BARRA DE NAVEGACIÓN FLOTANTE ABAJO -->
+      <div class="bottom-nav-container">
+        <div class="custom-nav-bar">
+          <div class="nav-bar-item" onclick="showToast('Misiones')">
+            <i data-lucide="award"></i>
+            <span>Misiones</span>
+          </div>
+          <div class="nav-bar-item" onclick="showToast('Tienda')">
+            <i data-lucide="store"></i>
+            <span>Tienda</span>
+          </div>
+          <div class="nav-bar-item" onclick="showToast('Inventario')">
+            <i data-lucide="backpack"></i>
+            <span>Inventario</span>
+          </div>
+          <div class="nav-bar-item" onclick="showToast('Ajustes')">
+            <i data-lucide="settings"></i>
+            <span>Ajustes</span>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
