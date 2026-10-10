@@ -265,8 +265,7 @@
       z-index: 100;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: clamp(12px, 3vw, 24px);
+      align-items: flex-end;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
@@ -281,17 +280,18 @@
       width: 100%;
       max-width: 450px;
       background: var(--card-bg);
-      border-radius: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      height: 88vh;
-      height: 88dvh;
+      border-radius: 28px 28px 0 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: none;
+      height: 94vh;
+      height: 94dvh;
       max-height: 880px;
       display: flex;
       flex-direction: column;
       position: relative;
       transform: translateY(100%);
       transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.95);
       overflow: hidden;
     }
 
@@ -301,7 +301,14 @@
 
     @media (min-width: 600px) {
       .profile-overlay {
+        align-items: center;
         padding: 24px;
+      }
+      .profile-sheet {
+        border-radius: 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        height: 88vh;
+        height: 88dvh;
       }
     }
 
@@ -816,7 +823,7 @@
 
       <div class="pill-content">
         <div class="pill-username">
-          <span class="user-display-name">Doom</span>
+          <span class="user-display-name">𝕯𝖔𝖔𝖒</span>
           <i data-lucide="chevron-down"></i>
         </div>
         <div class="pill-marquee-window">
@@ -856,7 +863,7 @@
 
         <div class="avatar-quote-flex">
           <div class="sheet-avatar-box">
-            <img src="https://xatimg.com/image/r56XhGg9L0Ly.jpg" alt="Avatar" class="sheet-avatar-img">
+            <img src="https://xatimg.com/image/S2qKZsqtJVUr.jpg" alt="Avatar" class="sheet-avatar-img">
             <div class="dnd-badge" style="width: 24px; height: 24px; bottom: 0; right: 0;">
               <div class="dnd-bar" style="width: 11px;"></div>
             </div>
@@ -876,7 +883,7 @@
         <!-- Nombre e insignias -->
         <div class="sheet-name-block">
           <div class="sheet-main-name">
-            <span class="user-display-name">𝓓𝓸𝓸𝓶</span>
+            <span class="user-display-name">𝕯𝖔𝖔𝖒</span>
             <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
           </div>
           <div class="sheet-handle-row">
@@ -893,6 +900,7 @@
         <div class="sheet-nav-tabs">
           <button class="nav-tab-item active" data-tab="tab-principal">Principal</button>
           <button class="nav-tab-item" data-tab="tab-tablero">Reliquias</button>
+         
         </div>
 
         <!-- CONTENIDO PESTAÑA PRINCIPAL -->
@@ -968,24 +976,24 @@
           <div class="field-caption">Tablero Visual</div>
           <div class="board-grid">
             <div class="board-item">
-              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" class="board-img" alt="Dark Vibe">
-              <div class="board-title-overlay"><span class="board-title">Night Raven</span></div>
+              <img src="https://xatimg.com/image/1Hd9MJOfPtmq.jpg" class="board-img" alt="Dark Vibe">
+              <div class="board-title-overlay"><span class="board-title">Reactor arc</span></div>
             </div>
             <div class="board-item">
-              <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=400&q=80" class="board-img" alt="Gaming Setup">
-              <div class="board-title-overlay"><span class="board-title">Soul Society</span></div>
+              <img src="https://xatimg.com/image/1bzu5hoK8A8t.jpg" class="board-img" alt="Gaming Setup">
+              <div class="board-title-overlay"><span class="board-title">Cuernos de Loki</span></div>
             </div>
             <div class="board-item">
-              <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=400&q=80" class="board-img" alt="Neon City">
-              <div class="board-title-overlay"><span class="board-title">Cyber City</span></div>
+              <img src="https://xatimg.com/image/E7mb0yCQjD68.jpg" class="board-img" alt="Neon City">
+              <div class="board-title-overlay"><span class="board-title">Cabeza superior ironman</span></div>
             </div>
             <div class="board-item">
-              <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80" class="board-img" alt="Dark Art">
-              <div class="board-title-overlay"><span class="board-title">Empire</span></div>
+              <img src="https://xatimg.com/image/q92mEAvIAIYE.jpg" class="board-img" alt="Dark Art">
+              <div class="board-title-overlay"><span class="board-title">Guantelete del infinito</span></div>
             </div>
             <div class="board-item">
-              <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80" class="board-img" alt="Music Vibes">
-              <div class="board-title-overlay"><span class="board-title">Aguante</span></div>
+              <img src="https://xatimg.com/image/yQSTmQ4ZT6Ei.jpg" class="board-img" alt="Music Vibes">
+              <div class="board-title-overlay"><span class="board-title">Los 10 anillos</span></div>
             </div>
             <div class="board-item">
               <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" class="board-img" alt="Abstract Dark">
