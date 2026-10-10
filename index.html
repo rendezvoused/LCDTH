@@ -429,7 +429,13 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      color: #fff;
+      background: linear-gradient(120deg, rgba(25, 89, 51, 1) 0%, rgba(128, 171, 145, 1) 23%, rgba(176, 212, 190, 1) 54%, rgba(255, 252, 252, 1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sheet-main-name svg {
+      color: #a855f7; /* Mantiene color visible para el icono */
     }
 
     .sheet-handle-row {
@@ -866,7 +872,7 @@
 
     .custom-nav-bar {
       pointer-events: auto;
-      background: rgba(30, 22, 26, 0.92);
+      background: #2C2F33;
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 24px;
       padding: 8px 16px;
@@ -956,7 +962,7 @@
         </div>
         <div class="pill-marquee-window">
           <div class="marquee-track">
-            <span class="pill-marquee-text user-status-text">—Sobre esta roca, edificaré mi imperio.</span>
+            <span class="pill-marquee-text user-status-text">— Sobre esta roca, edificaré mi imperio.</span>
             <span class="pill-marquee-text user-status-text"></span>
           </div>
         </div>
@@ -1068,7 +1074,7 @@
           <!-- Biografía -->
           <div class="field-caption">Biografía</div>
           <div class="biography-quote" id="bioContent">
-            𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 𝑚𝑦 𝑠𝑜𝑢𝑙 𝑠𝑜𝑐𝑖𝑒𝑡𝑦.
+            — Sobre esta roca, edificaré mi imperio.
           </div>
 
           <!-- Miembro desde -->
